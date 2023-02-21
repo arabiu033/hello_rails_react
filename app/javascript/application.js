@@ -3,12 +3,15 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-function App() {
-  return (<h1>Hello World!</h1>);
-}
+import { Provider } from "react-redux";
+import store from "./redux/createStore"
+import App from './app'
 
 ReactDOM.render(
-  <App/>,
+  <React.StrictMode>
+      <Provider store={store}>
+          <App />
+      </Provider>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
