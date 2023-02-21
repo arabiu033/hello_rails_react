@@ -2,6 +2,6 @@ Rails.application.routes.draw do
 
   root 'root#index'
 
-  get 'root/index'
+  resources :root, only: [:index]
   
 end
